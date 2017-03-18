@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="net.cpszju.localization.domain.User" table="t_user">
+		<id name="id" column="user_id" type="java.lang.Integer" length="100">
+			<generator class="increment"></generator>
+		</id>
+		<property name="name" column="user_name" type="java.lang.String" length="150"/>
+		<property name="sex" column="user_sex" type="java.lang.Integer" length="20"/>
+		<property name="password" column="user_password" type="java.lang.String" length="200"/>
+		<property name="desciption" column="user_desc" type="java.lang.String" length="200"/>
+		<set name="logins" cascade="all">
+			<key column="user_id"></key>
+			<one-to-many class="net.cpszju.localization.domain.Login"/>
+		</set>
+		<set name="positons" cascade="all">
+			<key column="user_id"></key>
+			<one-to-many class="net.cpszju.localization.domain.Position"/>
+		</set>
+	</class>
+</hibernate-mapping>

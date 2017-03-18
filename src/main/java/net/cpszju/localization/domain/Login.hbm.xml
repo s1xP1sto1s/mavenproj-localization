@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="net.cpszju.localization.domain.Login" table="t_login">
+		<id name="id" column="l_id" type="java.lang.Integer" length="100">
+			<generator class="increment"></generator>
+		</id>
+		<property name="lastTime" column="last_time" type="java.lang.String" length="200"/>
+		<property name="loginTime" column="login_time" type="java.util.Date" length="150"/>
+		<many-to-one name="user" column="user_id" class="net.cpszju.localization.domain.User" cascade="all"/>
+	</class>
+</hibernate-mapping>

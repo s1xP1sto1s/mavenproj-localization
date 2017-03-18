@@ -1,0 +1,142 @@
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00000000, pid=22148, tid=21112
+#
+# JRE version: 7.0_01-b08
+# Java VM: Java HotSpot(TM) Client VM (21.1-b02 mixed mode windows-x86 )
+# Problematic frame:
+# C  0x00000000
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.sun.com/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01a8c400):  JavaThread "main" [_thread_in_Java, id=21112, stack(0x01a20000,0x01a70000)]
+
+siginfo: ExceptionCode=0xc0000005, ExceptionInformation=0x00000008 0x00000000
+
+Registers:
+EAX=0x01a8c400, EBX=0x13b9dc90, ECX=0x03b90ca8, EDX=0x0c800001
+ESP=0x01a6f220, EBP=0x01a6f248, ESI=0x01a6f224, EDI=0x01a6f24c
+EIP=0x00000000, EFLAGS=0x00010246
+
+Top of Stack: (sp=0x01a6f220)
+0x01a6f220:   01b9347b 03b90ca8 01a6f228 13ba833b
+0x01a6f230:   01a6f24c 13c00310 00000000 13ba8378
+0x01a6f240:   01a6f224 01a6f250 01a6f264 01b90357
+0x01a6f250:   77df2552 00001f80 01b902f2 01a8c400
+0x01a6f260:   13ba8378 01a6f2e0 77df2c7e 01a6f298
+0x01a6f270:   01a6f36c 0000000a 13ba8378 01b9d770
+0x01a6f280:   01a6f378 00000000 01a8c400 13ba8378
+0x01a6f290:   01a8c400 01a8c400 01a8c400 17c445c0 
+
+Instructions: (pc=0x00000000)
+0xffffffe0:   
+
+
+Register to memory mapping:
+
+EAX=0x01a8c400 is a thread
+EBX=0x13b9dc90 is an oop
+{method} 
+ - klass: {other class}
+ECX=0x03b90ca8 is an oop
+java.lang.Class 
+ - klass: 'java/lang/Class'
+EDX=0x0c800001 is an unallocated location in the heap
+ESP=0x01a6f220 is pointing into the stack for thread: 0x01a8c400
+EBP=0x01a6f248 is pointing into the stack for thread: 0x01a8c400
+ESI=0x01a6f224 is pointing into the stack for thread: 0x01a8c400
+EDI=0x01a6f24c is pointing into the stack for thread: 0x01a8c400
+
+
+Stack: [0x01a20000,0x01a70000],  sp=0x01a6f220,  free space=316k
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x01a8c400 JavaThread "main" [_thread_in_Java, id=21112, stack(0x01a20000,0x01a70000)]
+
+Other Threads:
+  0x17c43800 VMThread [stack: 0x01250000,0x012a0000] [id=22516]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 88K [0x03b90000, 0x040e0000, 0x090e0000)
+  eden space 4416K,   2% used [0x03b90000, 0x03ba61b0, 0x03fe0000)
+  from space 512K,   0% used [0x03fe0000, 0x03fe0000, 0x04060000)
+  to   space 512K,   0% used [0x04060000, 0x04060000, 0x040e0000)
+ tenured generation   total 10944K, used 0K [0x090e0000, 0x09b90000, 0x13b90000)
+   the space 10944K,   0% used [0x090e0000, 0x090e0000, 0x090e0200, 0x09b90000)
+ compacting perm gen  total 12288K, used 483K [0x13b90000, 0x14790000, 0x17b90000)
+   the space 12288K,   3% used [0x13b90000, 0x13c08c58, 0x13c08e00, 0x14790000)
+No shared spaces configured.
+
+Code Cache  [0x01b90000, 0x01bd8000, 0x03b90000)
+ total_blobs=43 nmethods=0 adapters=18 free_code_cache=32498Kb largest_free_block=33278336
+
+Dynamic libraries:
+0x01340000 - 0x0136f000 	E:\Program Files\Java\jdk1.7.0_01\bin\javaw.exe
+0x77950000 - 0x77a92000 	C:\Windows\SYSTEM32\ntdll.dll
+0x760a0000 - 0x76175000 	C:\Windows\system32\kernel32.dll
+0x758d0000 - 0x7591b000 	C:\Windows\system32\KERNELBASE.dll
+0x764d0000 - 0x76571000 	C:\Windows\system32\ADVAPI32.dll
+0x77ac0000 - 0x77b6c000 	C:\Windows\system32\msvcrt.dll
+0x75be0000 - 0x75bf9000 	C:\Windows\SYSTEM32\sechost.dll
+0x76180000 - 0x76222000 	C:\Windows\system32\RPCRT4.dll
+0x77410000 - 0x774d9000 	C:\Windows\system32\USER32.dll
+0x762a0000 - 0x762ee000 	C:\Windows\system32\GDI32.dll
+0x75f90000 - 0x75f9a000 	C:\Windows\system32\LPK.dll
+0x77370000 - 0x7740d000 	C:\Windows\system32\USP10.dll
+0x74550000 - 0x746ee000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d\COMCTL32.dll
+0x77530000 - 0x77587000 	C:\Windows\system32\SHLWAPI.dll
+0x76280000 - 0x7629f000 	C:\Windows\system32\IMM32.DLL
+0x77880000 - 0x7794d000 	C:\Windows\system32\MSCTF.dll
+0x5d000000 - 0x5d0be000 	E:\Program Files\Java\jdk1.7.0_01\jre\bin\msvcr100.dll
+0x77cd0000 - 0x77ff1000 	E:\Program Files\Java\jdk1.7.0_01\jre\bin\client\jvm.dll
+0x70290000 - 0x70297000 	C:\Windows\system32\WSOCK32.dll
+0x76240000 - 0x76275000 	C:\Windows\system32\WS2_32.dll
+0x76230000 - 0x76236000 	C:\Windows\system32\NSI.dll
+0x739c0000 - 0x739f2000 	C:\Windows\system32\WINMM.dll
+0x77ab0000 - 0x77ab5000 	C:\Windows\system32\PSAPI.DLL
+0x74280000 - 0x7428c000 	E:\Program Files\Java\jdk1.7.0_01\jre\bin\verify.dll
+0x74230000 - 0x74250000 	E:\Program Files\Java\jdk1.7.0_01\jre\bin\java.dll
+0x74200000 - 0x7422a000 	E:\Program Files\Java\jdk1.7.0_01\jre\bin\jdwp.dll
+0x742a0000 - 0x742a7000 	E:\Program Files\Java\jdk1.7.0_01\jre\bin\npt.dll
+0x74250000 - 0x74263000 	E:\Program Files\Java\jdk1.7.0_01\jre\bin\zip.dll
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:52006 -Dmaven.multiModuleProjectDirectory=M2_HOME -Dfile.encoding=GBK 
+java_command: org.eclipse.jdt.internal.junit.runner.RemoteTestRunner -version 3 -port 52005 -testLoaderClass org.eclipse.jdt.internal.junit4.runner.JUnit4TestLoader -loaderpluginname org.eclipse.jdt.junit4.runtime -test net.cpszju.service.test.UserServiceTest:getUserFromPositionTest
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=E:\Program Files\Java\jdk1.7.0_01
+JRE_HOME=E:\Program Files\Java\jre7
+PATH=E:\Program Files\Java\jdk1.7.0_01\jre\bin;D:/Program Files/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin/client;D:/Program Files/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/bin;D:/Program Files/MyEclipse/Common/binary/com.sun.java.jdk.win32.x86_1.6.0.013/jre/lib/i386;C:\Users\Public\Fog\Program\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\MATLAB\R2013a\runtime\win32;D:\Program Files\MATLAB\R2013a\bin;C:\Windows\System32\reg.exe;JAVE_HOMEbin/javac;JRE_HOME;d:\CTEX\UserData\miktex\bin;d:\CTEX\MiKTeX\miktex\bin;d:\CTEX\CTeX\ctex\bin;d:\CTEX\CTeX\cct\bin;d:\CTEX\CTeX\ty\bin;d:\CTEX\Ghostscript\gs9.05\bin;d:\CTEX\GSview\gsview;d:\CTEX\WinEdt;d:\Python34;d:\Python34\Scripts;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\MySQL\MySQL Server 5.0\bin;D:\maven339\apache-maven\bin;D:\Anaconda3;D:\Anaconda3\Scripts;D:\Anaconda3\Library\bin;C:\Program Files\MySQL\MySQL Server 5.0\bin;D:\maven339\apache-maven\bin
+USERNAME=Administrator
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 60 Stepping 3, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 Build 7601 Service Pack 1
+
+CPU:total 4 (4 cores per cpu, 1 threads per core) family 6 model 60 stepping 3, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt
+
+Memory: 4k page, physical 3565424k(1498932k free), swap 7129132k(3588564k free)
+
+vm_info: Java HotSpot(TM) Client VM (21.1-b02) for windows-x86 JRE (1.7.0_01-b08), built on Oct  3 2011 02:11:36 by "java_re" with unknown MS VC++:1600
+
+time: Thu Dec 22 18:33:27 2016
+elapsed time: 0 seconds
+
